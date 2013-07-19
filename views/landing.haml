@@ -1,0 +1,218 @@
+
+.container
+  .divider.bottom-preview
+    #demo-3.row-fluid
+    .span10.offset1
+      .tabbable.custom-tabs.tabs-right.tabs-animated.flat.flat-all.hide-label-980.shadow.track-url.auto-scroll
+        %ul.nav.nav-tabs
+          %li.active
+            %a.active{"data-toggle" => "tab", :href => "#panel3-1"}
+              %i.icon-lock>
+              \ 
+              %span Login Panel
+          %li
+            %a{"data-toggle" => "tab", :href => "#panel3-2"}
+              %i.icon-user>
+              \ 
+              %span Register Panel
+          %li
+            %a{"data-toggle" => "tab", :href => "#panel3-3"}
+              %i.icon-key>
+              \ 
+              %span Forgot Password
+        .tab-content
+          #panel3-1.tab-pane.active
+            .row-fluid
+              .span5
+                %h4
+                  %i.icon-user>
+                  \   Login Here
+                %label Username
+                %input.input-block-level{:type => "text"}/
+                %label
+                  Password
+                  %a.pull-right{:href => "#"}
+                    %i.icon-question-sign>
+                    \ Forgot Password
+                %input.input-block-level{:type => "password"}/
+                %label
+                  %button.btn.btn-mini.custom-checkbox.active{"data-toggle" => "button", :type => "button"}
+                    %i.icon-ok
+                  \   Remember Me
+                %br/
+                %a.btn{:href => "#"}
+                  Sign In   
+                  %i.icon-chevron-sign-right
+              .span3
+                %h4
+                  %i.icon-expand-alt>
+                  \  Social
+                .socials.clearfix
+                  %a.icon-facebook.facebook
+                  %a.icon-twitter.twitter
+                  %a.icon-google-plus.google-plus
+                  %a.icon-pinterest.pinterest
+                  %a.icon-linkedin.linked-in
+                  %a.icon-github.github
+              .span4
+                %h4
+                  %i.icon-question>
+                  \  Registration
+                .box
+                  %p
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel.
+                  %p
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in.
+                
+          #panel3-2.tab-pane
+            .row-fluid
+              .span5
+                %h4
+                  %i.icon-user>
+                  \   Register Here
+                %label Username
+                %input.input-block-level{:type => "text"}/
+                %label Password
+                %input.input-block-level{:type => "password"}/
+                %label Repeat Password
+                %input.input-block-level{:type => "password"}/
+                %label
+                  %button.btn.btn-mini.custom-checkbox.active{"data-toggle" => "button", :type => "button"}
+                    %i.icon-ok
+                  \   I Aggree With
+                  %a{:href => "#"} Terms & Conditions
+                %br/
+                %a.btn{:href => "#"}
+                  Register Now   
+                  %i.icon-chevron-sign-right
+              .span3
+                %h4
+                  %i.icon-expand-alt>
+                  \  Social
+                .socials.clearfix
+                  %a.icon-facebook.facebook
+                  %a.icon-twitter.twitter
+                  %a.icon-google-plus.google-plus
+                  %a.icon-pinterest.pinterest
+                  %a.icon-linkedin.linked-in
+                  %a.icon-github.github
+              .span4
+                %h4
+                  %i.icon-question>
+                  \  Login
+                .box
+                  %p
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel.
+                  %p
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in.
+                
+          #panel3-3.tab-pane
+            .row-fluid
+              .span5
+                %h4
+                  %i.icon-unlock>
+                  \  Password Recovery
+                %label Email
+                %input.input-block-level{:type => "text"}/
+                %label Security Question
+                %select.input-block-level
+                  %option{:disabled => "disabled", :selected => "selected"} ---Select---
+                  %option Which Is Your First Mobile
+                  %option What Is Your Pet Name
+                  %option What Is Your Mother Name
+                  %option Which Is Your First Game
+                %label Answer
+                %input.input-block-level{:type => "text"}/
+                %br/
+                %br/
+                %a.btn{:href => "#"}
+                  Recover Password   
+                  %i.icon-chevron-sign-right
+              .span7
+                %h4
+                  %i.icon-question>
+                  \  Help
+                .box
+                  %p
+                    Getting Error With Password Recovery Click Here For
+                    %a{:href => "#"} Support
+                  %ul
+                    %li Vestibulum pharetra lectus montes lacus!
+                    %li Iaculis lectus augue pulvinar taciti.
+                .box
+                  %ul
+                    %li Potenti facilisis felis sociis blandit euismod.
+                    %li Odio mi hendrerit ad nostra.
+                    %li Rutrum mi commodo molestie taciti.
+                    %li Interdum ipsum ad risus conubia, porttitor.
+                    %li Placerat litora, proin hac hendrerit ac volutpat.
+                    %li Ornare, aliquam condimentum  habitasse.
+%script{:src => "scripts/jquery-1.9.1.min.js"}
+%script{:src => "scripts/bootstrap.min.js"}
+%script{:src => "scripts/tabs-addon.js"}
+:javascript
+  $(function ()
+  {
+      $("a[href^='#demo']").click(function (evt)
+      {
+          evt.preventDefault();
+          var scroll_to = $($(this).attr("href")).offset().top;
+          $("html,body").animate({ scrollTop: scroll_to - 80 }, 600);
+      });
+      $("a[href^='#bg']").click(function (evt)
+      {
+          evt.preventDefault();
+          $("body").removeClass("light").removeClass("dark").addClass($(this).data("class")).css("background-image", "url('bgs/" + $(this).data("file") + "')");
+          console.log($(this).data("file"));
+
+
+      });
+      $("a[href^='#color']").click(function (evt)
+      {
+          evt.preventDefault();
+          var elm = $(".tabbable");
+          elm.removeClass("grey").removeClass("dark").removeClass("dark-input").addClass($(this).data("class"));
+          if (elm.hasClass("dark dark-input"))
+          {
+              $(".btn", elm).addClass("btn-inverse");
+          }
+          else
+          {
+              $(".btn", elm).removeClass("btn-inverse");
+
+          }
+
+      });
+      $(".color-swatch div").each(function ()
+      {
+          $(this).css("background-color", $(this).data("color"));
+      });
+      $(".color-swatch div").click(function (evt)
+      {
+          evt.stopPropagation();
+          $("body").removeClass("light").removeClass("dark").addClass($(this).data("class")).css("background-color", $(this).data("color"));
+      });
+      $("#texture-check").mouseup(function (evt)
+      {
+          evt.preventDefault();
+
+          if (!$(this).hasClass("active"))
+          {
+              $("body").css("background-image", "url(bgs/n1.png)");
+          }
+          else
+          {
+              $("body").css("background-image", "none");
+          }
+      });
+
+      $("a[href='#']").click(function (evt)
+      {
+          evt.preventDefault();
+
+      });
+
+      $("a[data-toggle='popover']").popover({
+          trigger:"hover",html:true,placement:"top"
+      });
+  });

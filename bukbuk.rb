@@ -7,12 +7,23 @@ configure(:development){ set :database, "sqlite3:///bukbuk.sqlite3" }
 require './models'
 
 
-['/', '/home'].each do |path|
-get path do
-if session[:userid].nil? then
-haml :landing
-else
-redirect "/#{User.get(session[:userid])}"
+get '/' do
+	haml :landing
 end
+
+
+get '/home' do
+	haml :home
 end
+
+get '/profile' do
+	haml :profile
+end
+
+get '/followers' do
+	haml :followers
+end
+
+get '/following' do
+	haml :following
 end

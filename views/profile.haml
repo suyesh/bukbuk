@@ -17,7 +17,11 @@
                 %h4
                   %i.icon.user>
                   \   User 
-                
+            %p #here, You will see yourself
+            %form{:method => :post}
+            %textarea{:rows => "3", :style => "width: 787px; margin: 0px 0px 10px; height: 60px;",:placeholder => "Write your tweet here.", :name => "tweet"}
+            %br
+            %input{:type => "submit", :class => "btn"}  
 %script{:src => "scripts/jquery-1.9.1.min.js"}
 %script{:src => "scripts/bootstrap.min.js"}
 %script{:src => "scripts/tabs-addon.js"}

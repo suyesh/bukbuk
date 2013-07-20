@@ -11,6 +11,24 @@ get '/' do
 	haml :landing
 end
 
+post '/users/sign_up' do
+  @user = User.where(:username => params[:username]).first
+  if @user
+    if @user.password == params[:password]
+      session[:user_id] = @user.id
+      flash[:notice] = "Welcome back to BukBuk, #{@user.full_name}."
+      redirect '/home' + @user.id.to_s
+    else
+      flash[:notice] = "Your password was wrong."
+      redirect '/'
+    end
+  else
+    flash[:notice] = "User not found. Please sign up for BukBuk."
+    redirect '/'
+  end
+end
+
+
 
 get '/home' do
 	haml :home

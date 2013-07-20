@@ -27,21 +27,22 @@
                 %h4
                   %i.icon-user>
                   \   Login Here
-                %label Username
-                %input.input-block-level{:type => "text", :name => "username"}/
-                %label
-                  Password
-                  %a.pull-right{:href => "#"}
-                    %i.icon-question-sign>
-                    \ Forgot Password
-                %input.input-block-level{:type => "password", :name => "password"}/
-                %label
-                  %button.btn.btn-mini.custom-checkbox.active{"data-toggle" => "button", :type => "button"}
-                    %i.icon-ok
-                  \   Remember Me
-                %br/
-                %a.btn{:type => "submit"}
-                  Sign In   
+                  %form{:action => "/sign_in", :method => "post"}
+                    %label Username
+                    %input.input-block-level{:type => "text", :name => "username"}/
+                    %label
+                      Password
+                      %a.pull-right{:href => "#"}
+                        %i.icon-question-sign>
+                        \ Forgot Password
+                    %input.input-block-level{:type => "password", :name => "password"}/
+                    %label
+                      %button.btn.btn-mini.custom-checkbox.active{"data-toggle" => "button", :type => "button"}
+                        %i.icon-ok
+                      \   Remember Me
+                    %br/
+                    %a.btn{:type => "submit"}
+                      Sign In   
                   %i.icon-chevron-sign-right
               .span3
                 %h4
@@ -70,20 +71,21 @@
                 %h4
                   %i.icon-user>
                   \   Register Here
-                %label Username
-                %input.input-block-level{:type => "text", :name => "username"}/
-                %label Password
-                %input.input-block-level{:type => "password", :name => "password" }/
-                %label Repeat Password
-                %input.input-block-level{:type => "password", :name => "password" }/
-                %label
-                  %button.btn.btn-mini.custom-checkbox.active{"data-toggle" => "button", :type => "button"}
-                    %i.icon-ok
-                  \   I Aggree With
-                  %a{:href => "#"} Terms & Conditions
-                %br/
-                %a.btn{:type => "submit"}
-                  Register Now   
+                  %form{:action => "/users/sign_up", :method => "post"}
+                    %label Username
+                    %input.input-block-level{:type => "text", :name => "username"}/
+                    %label Password
+                    %input.input-block-level{:type => "password", :name => "password" }/
+                    %label Repeat Password
+                    %input.input-block-level{:type => "password", :name => "password" }/
+                    %label
+                      %button.btn.btn-mini.custom-checkbox.active{"data-toggle" => "button", :type => "button"}
+                        %i.icon-ok
+                      \   I Aggree With
+                      %a{:href => "#"} Terms & Conditions
+                    %br/
+                    %a.btn{:type => "submit"}
+                      Register Now   
                   %i.icon-chevron-sign-right
               .span3
                 %h4
